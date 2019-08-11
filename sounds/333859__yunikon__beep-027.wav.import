@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/333859__yunikon__beep-027.wav-8239189d571e75ca5448900b384ee0d6.sample"
+
+[deps]
+
+source_file="res://sounds/333859__yunikon__beep-027.wav"
+dest_files=[ "res://.import/333859__yunikon__beep-027.wav-8239189d571e75ca5448900b384ee0d6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

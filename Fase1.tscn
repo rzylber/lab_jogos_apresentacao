@@ -1,0 +1,139 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Fase1.gd" type="Script" id=1]
+[ext_resource path="res://HomeButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://images/fase1/paginas/pag1.png" type="Texture" id=3]
+[ext_resource path="res://images/fase1/paginas/pag2.png" type="Texture" id=4]
+[ext_resource path="res://images/sprites/carlton_sprites2.png" type="Texture" id=5]
+[ext_resource path="res://images/fase1/paginas/pag3.png" type="Texture" id=6]
+[ext_resource path="res://images/fase1/outras/indie.jpeg" type="Texture" id=7]
+[ext_resource path="res://PageControls.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "dancing"
+length = 2.0
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Home" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1157.44, 18.372 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="MainContainer" type="Control" parent="."]
+margin_left = 40.0
+margin_top = 30.0
+margin_right = 40.0
+margin_bottom = 34.0
+
+[node name="Paginas" type="Control" parent="MainContainer"]
+
+[node name="Pag1" type="TextureRect" parent="MainContainer/Paginas" groups=[
+"pages",
+]]
+visible = false
+margin_left = -2.07471
+margin_top = -9.38824
+margin_right = 1197.93
+margin_bottom = 590.612
+texture = ExtResource( 3 )
+
+[node name="Pag2" type="Control" parent="MainContainer/Paginas" groups=[
+"pages",
+]]
+visible = false
+margin_left = -2.075
+margin_top = -9.388
+margin_right = 1197.93
+margin_bottom = 590.612
+
+[node name="Text" type="TextureRect" parent="MainContainer/Paginas/Pag2"]
+margin_right = 1200.0
+margin_bottom = 600.0
+texture = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="MainContainer/Paginas/Pag2"]
+position = Vector2( 887.127, 407.416 )
+scale = Vector2( 2.07775, 1.91679 )
+texture = ExtResource( 5 )
+vframes = 2
+hframes = 4
+
+[node name="Dancer" type="AnimationPlayer" parent="MainContainer/Paginas/Pag2"]
+anims/dancing = SubResource( 1 )
+
+[node name="Pag3" type="Control" parent="MainContainer/Paginas" groups=[
+"pages",
+]]
+margin_left = -2.075
+margin_top = -9.388
+margin_right = -2.075
+margin_bottom = -9.388
+
+[node name="Text2" type="TextureRect" parent="MainContainer/Paginas/Pag3"]
+margin_right = 1200.0
+margin_bottom = 600.0
+texture = ExtResource( 6 )
+
+[node name="Button" type="Button" parent="MainContainer/Paginas/Pag3"]
+margin_left = 64.4388
+margin_top = 107.398
+margin_right = 221.439
+margin_bottom = 127.398
+rect_scale = Vector2( 2.68698, 2.68698 )
+text = "A Evolução dos Games"
+
+[node name="Button2" type="Button" parent="MainContainer/Paginas/Pag3"]
+margin_left = 64.4388
+margin_top = 186.156
+margin_right = 221.439
+margin_bottom = 206.156
+rect_scale = Vector2( 2.68698, 2.68698 )
+text = "Indie Game"
+
+[node name="IndieGameMovie" type="TextureRect" parent="MainContainer/Paginas/Pag3"]
+visible = false
+margin_left = 518.374
+margin_top = 103.102
+margin_right = 2118.37
+margin_bottom = 1103.1
+rect_scale = Vector2( 0.431538, 0.431538 )
+texture = ExtResource( 7 )
+
+[node name="Itchio" type="Button" parent="MainContainer/Paginas/Pag3"]
+margin_left = 246.299
+margin_top = 267.779
+margin_right = 350.299
+margin_bottom = 287.779
+rect_scale = Vector2( 2.31544, 2.31544 )
+text = "https://itch.io/"
+
+[node name="ControlesContainer" type="Control" parent="MainContainer"]
+margin_top = 4.0
+margin_bottom = 4.0
+
+[node name="Controles" parent="MainContainer/ControlesContainer" instance=ExtResource( 8 )]
+position = Vector2( 31.6069, 599.595 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="button_up" from="MainContainer/Paginas/Pag3/Button" to="." method="_on_Button_button_up"]
+[connection signal="button_up" from="MainContainer/Paginas/Pag3/Button2" to="." method="_on_Button2_button_up"]
+[connection signal="button_up" from="MainContainer/Paginas/Pag3/Itchio" to="." method="_on_Itchio_button_up"]
+[connection signal="next_clicked" from="MainContainer/ControlesContainer/Controles" to="." method="_on_Node2D_next_clicked"]
+[connection signal="previous_clicked" from="MainContainer/ControlesContainer/Controles" to="." method="_on_Node2D_previous_clicked"]
