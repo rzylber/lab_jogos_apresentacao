@@ -1,14 +1,16 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Fase1.gd" type="Script" id=1]
 [ext_resource path="res://HomeButton.tscn" type="PackedScene" id=2]
-[ext_resource path="res://images/fase1/paginas/pag1.png" type="Texture" id=3]
-[ext_resource path="res://images/fase1/paginas/pag2.png" type="Texture" id=4]
-[ext_resource path="res://images/sprites/carlton_sprites2.png" type="Texture" id=5]
-[ext_resource path="res://images/fase1/paginas/pag3.png" type="Texture" id=6]
-[ext_resource path="res://images/fase1/outras/indie.jpeg" type="Texture" id=7]
-[ext_resource path="res://images/fase1/paginas/pag4.png" type="Texture" id=8]
-[ext_resource path="res://PageControls.tscn" type="PackedScene" id=9]
+[ext_resource path="res://PageControls.tscn" type="PackedScene" id=3]
+[ext_resource path="res://images/fase1/paginas/pag1.png" type="Texture" id=4]
+[ext_resource path="res://images/fase1/paginas/pag2.png" type="Texture" id=5]
+[ext_resource path="res://images/sprites/carlton_sprites2.png" type="Texture" id=6]
+[ext_resource path="res://images/fase1/paginas/pag3.png" type="Texture" id=7]
+[ext_resource path="res://images/fase1/outras/indie.jpeg" type="Texture" id=8]
+[ext_resource path="res://images/fase1/paginas/pag4.png" type="Texture" id=9]
+[ext_resource path="res://images/fase1/paginas/pag5.png" type="Texture" id=10]
+[ext_resource path="res://images/fase1/paginas/pag6.png" type="Texture" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "dancing"
@@ -32,7 +34,7 @@ tracks/0/keys = {
 script = ExtResource( 1 )
 
 [node name="Home" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1157.44, 18.372 )
+position = Vector2( 1094.43, 624.097 )
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -44,6 +46,13 @@ margin_top = 30.0
 margin_right = 40.0
 margin_bottom = 34.0
 
+[node name="ControlesContainer" type="Control" parent="MainContainer"]
+margin_top = 4.0
+margin_bottom = 4.0
+
+[node name="Controles" parent="MainContainer/ControlesContainer" instance=ExtResource( 3 )]
+position = Vector2( 31.6069, 599.595 )
+
 [node name="Paginas" type="Control" parent="MainContainer"]
 
 [node name="Pag1" type="TextureRect" parent="MainContainer/Paginas" groups=[
@@ -54,7 +63,7 @@ margin_left = -2.07471
 margin_top = -9.38824
 margin_right = 1197.93
 margin_bottom = 590.612
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="Pag2" type="Control" parent="MainContainer/Paginas" groups=[
 "pages",
@@ -69,12 +78,12 @@ margin_bottom = 590.612
 [node name="Text" type="TextureRect" parent="MainContainer/Paginas/Pag2"]
 margin_right = 1200.0
 margin_bottom = 600.0
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="MainContainer/Paginas/Pag2"]
 position = Vector2( 887.127, 407.416 )
 scale = Vector2( 2.07775, 1.91679 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 vframes = 2
 hframes = 4
 
@@ -84,6 +93,7 @@ anims/dancing = SubResource( 1 )
 [node name="Pag3" type="Control" parent="MainContainer/Paginas" groups=[
 "pages",
 ]]
+editor/display_folded = true
 visible = false
 margin_left = -2.075
 margin_top = -9.388
@@ -93,7 +103,7 @@ margin_bottom = -9.388
 [node name="Text2" type="TextureRect" parent="MainContainer/Paginas/Pag3"]
 margin_right = 1200.0
 margin_bottom = 600.0
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="Button" type="Button" parent="MainContainer/Paginas/Pag3"]
 margin_left = 64.4388
@@ -118,7 +128,7 @@ margin_top = 103.102
 margin_right = 2118.37
 margin_bottom = 1103.1
 rect_scale = Vector2( 0.431538, 0.431538 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="Itchio" type="Button" parent="MainContainer/Paginas/Pag3"]
 margin_left = 246.299
@@ -139,6 +149,8 @@ text = "Papers, Please"
 [node name="Pag4" type="Control" parent="MainContainer/Paginas" groups=[
 "pages",
 ]]
+editor/display_folded = true
+visible = false
 margin_left = -2.075
 margin_top = -9.388
 margin_right = 37.925
@@ -147,7 +159,7 @@ margin_bottom = 30.612
 [node name="TextureRect" type="TextureRect" parent="MainContainer/Paginas/Pag4"]
 margin_right = 40.0
 margin_bottom = 40.0
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 
 [node name="Showcase1" type="Button" parent="MainContainer/Paginas/Pag4"]
 margin_left = 58.7109
@@ -205,13 +217,68 @@ margin_bottom = 518.326
 rect_scale = Vector2( 2.68698, 2.68698 )
 text = "Exemplos"
 
-[node name="ControlesContainer" type="Control" parent="MainContainer"]
-margin_top = 4.0
-margin_bottom = 4.0
+[node name="Pag5" type="Control" parent="MainContainer/Paginas" groups=[
+"pages",
+]]
+editor/display_folded = true
+visible = false
+margin_left = -2.075
+margin_top = -9.388
+margin_right = 37.925
+margin_bottom = 30.612
 
-[node name="Controles" parent="MainContainer/ControlesContainer" instance=ExtResource( 9 )]
-position = Vector2( 31.6069, 599.595 )
+[node name="TextureRect2" type="TextureRect" parent="MainContainer/Paginas/Pag5"]
+margin_right = 1200.0
+margin_bottom = 600.0
+texture = ExtResource( 10 )
+
+[node name="Exemplos2" type="Button" parent="MainContainer/Paginas/Pag5"]
+margin_left = 58.0678
+margin_top = 201.111
+margin_right = 223.068
+margin_bottom = 221.111
+rect_scale = Vector2( 2.68698, 2.68698 )
+text = "Referência"
+
+[node name="Exemplos3" type="Button" parent="MainContainer/Paginas/Pag5"]
+margin_left = 520.595
+margin_top = 201.111
+margin_right = 685.595
+margin_bottom = 221.111
+rect_scale = Vector2( 2.68698, 2.68698 )
+text = "Funções prontas"
+
+[node name="Pag6" type="Control" parent="MainContainer/Paginas" groups=[
+"pages",
+]]
+margin_left = -2.075
+margin_top = -9.388
+margin_right = 37.925
+margin_bottom = 30.612
+
+[node name="TextureRect2" type="TextureRect" parent="MainContainer/Paginas/Pag6"]
+margin_right = 1200.0
+margin_bottom = 600.0
+texture = ExtResource( 11 )
+
+[node name="DownloadSprite" type="Button" parent="MainContainer/Paginas/Pag6"]
+margin_left = 65.2277
+margin_top = 470.322
+margin_right = 230.228
+margin_bottom = 490.322
+rect_scale = Vector2( 2.68698, 2.68698 )
+text = "Download"
+
+[node name="FreeAssets" type="Button" parent="MainContainer/Paginas/Pag6"]
+margin_left = 658.065
+margin_top = 109.465
+margin_right = 823.065
+margin_bottom = 129.465
+rect_scale = Vector2( 2.68698, 2.68698 )
+text = "Recursos"
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="next_clicked" from="MainContainer/ControlesContainer/Controles" to="." method="_on_Node2D_next_clicked"]
+[connection signal="previous_clicked" from="MainContainer/ControlesContainer/Controles" to="." method="_on_Node2D_previous_clicked"]
 [connection signal="button_up" from="MainContainer/Paginas/Pag3/Button" to="." method="_on_Button_button_up"]
 [connection signal="button_up" from="MainContainer/Paginas/Pag3/Button2" to="." method="_on_Button2_button_up"]
 [connection signal="button_up" from="MainContainer/Paginas/Pag3/Itchio" to="." method="_on_Itchio_button_up"]
@@ -223,5 +290,7 @@ position = Vector2( 31.6069, 599.595 )
 [connection signal="button_up" from="MainContainer/Paginas/Pag4/Download" to="." method="_on_Download_button_up"]
 [connection signal="button_up" from="MainContainer/Paginas/Pag4/Docs" to="." method="_on_Docs_button_up"]
 [connection signal="button_up" from="MainContainer/Paginas/Pag4/Exemplos" to="." method="_on_Exemplos_button_up"]
-[connection signal="next_clicked" from="MainContainer/ControlesContainer/Controles" to="." method="_on_Node2D_next_clicked"]
-[connection signal="previous_clicked" from="MainContainer/ControlesContainer/Controles" to="." method="_on_Node2D_previous_clicked"]
+[connection signal="button_up" from="MainContainer/Paginas/Pag5/Exemplos2" to="." method="_on_Exemplos2_button_up"]
+[connection signal="button_up" from="MainContainer/Paginas/Pag5/Exemplos3" to="." method="_on_Exemplos3_button_up"]
+[connection signal="button_up" from="MainContainer/Paginas/Pag6/DownloadSprite" to="." method="_on_DownloadSprite_button_up"]
+[connection signal="button_up" from="MainContainer/Paginas/Pag6/FreeAssets" to="." method="_on_FreeAssets_button_up"]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Node2D.vs" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 273.507, 178.997 )
+scale = Vector2( 0.514898, 0.525361 )
+script = ExtResource( 1 )
+
+[node name="Button" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+rect_scale = Vector2( 3.83071, 5.04121 )
+text = "Emite sinal"
+
+[node name="Label" type="Label" parent="."]
+margin_top = 223.507
+margin_right = 40.0
+margin_bottom = 237.507
+rect_scale = Vector2( 12.109, 12.109 )
+text = "Nada a declarar"
+
+[node name="Button2" type="Button" parent="."]
+margin_top = 463.368
+margin_right = 83.0
+margin_bottom = 483.368
+rect_scale = Vector2( 3.83071, 5.04121 )
+text = "Volta"
+[connection signal="novo_sinal" from="." to="." method="_on_Node2D_novo_sinal"]
+[connection signal="button_up" from="Button" to="." method="_on_Button_button_up"]
+[connection signal="button_up" from="Button2" to="." method="_on_Button2_button_up"]

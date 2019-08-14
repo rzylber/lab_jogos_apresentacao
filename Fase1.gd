@@ -1,6 +1,6 @@
 extends Node2D
 
-var paginas = ["Pag1", "Pag2", "Pag3", "Pag4"]
+var paginas = ["Pag1", "Pag2", "Pag3", "Pag4", "Pag5", "Pag6"]
 var paginaAtual = 0
 
 func _ready():
@@ -78,3 +78,19 @@ func _on_Docs_button_up():
 
 func _on_Exemplos_button_up():
 	OS.shell_open("https://github.com/godotengine/godot-demo-projects")
+
+
+func _on_Exemplos2_button_up():
+	OS.shell_open("https://docs.godotengine.org/en/3.1/getting_started/scripting/gdscript/gdscript_basics.html")
+
+
+func _on_Exemplos3_button_up():
+	OS.shell_open("https://docs.godotengine.org/en/3.1/classes/class_@gdscript.html")
+
+
+func _on_DownloadSprite_button_up():
+	OS.shell_open("http://www.ludolab.com.br/lab_games/Sprite.zip")
+
+
+func _on_FreeAssets_button_up():
+	OS.shell_open("https://www.gameart2d.com/freebies.html")
