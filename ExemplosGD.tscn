@@ -19,7 +19,7 @@ margin_top = 71.5987
 margin_right = 533.599
 margin_bottom = 91.5987
 rect_scale = Vector2( 2.92174, 2.92174 )
-text = "Item 0"
+text = "Item 1"
 items = [ "Item 1", null, false, 0, null, "Item 2", null, false, 1, null, "Item 3", null, false, 2, null ]
 selected = 0
 

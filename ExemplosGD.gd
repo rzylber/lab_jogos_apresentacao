@@ -5,7 +5,7 @@ var times = ["Corinthians", "Flamengo", "XV de Piracicaba"]
 func _ready():
 	# variaveisOperadoresLiterais()
 	# condicionais()
-	# loops()
+	loops()
 	pass
 
 func variaveisOperadoresLiterais():
@@ -22,12 +22,19 @@ func condicionais():
 		print("Senha errada")
 
 func loops():
+	"""
 	for i in range(5): #https://docs.godotengine.org/en/3.1/classes/class_@gdscript.html#class-gdscript-method-range
 		print("Repete " + String(i))
 	for x in ["Que", "coisa", "mais", "legal"]:
 		print(x)
 	for c in "CADA LETRA":
 		print(c)
+	"""
+	var maximo = 5
+	var atual = 0
+	while atual <= maximo:
+		print(atual)
+		atual += 1
 
 func _on_Button_button_up():
 	print("Sinal Recebido")
