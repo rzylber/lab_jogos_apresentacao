@@ -29,7 +29,7 @@ margin_right = 477.664
 margin_bottom = 521.055
 rect_scale = Vector2( 1.56202, 1.56202 )
 text = "Fase 1"
-items = [ "Fase 1", null, false, 0, null ]
+items = [ "Fase 1", null, false, 0, null, "Fase 2", null, false, -1, null ]
 selected = 0
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
